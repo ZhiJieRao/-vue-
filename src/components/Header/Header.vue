@@ -1,9 +1,17 @@
 <template>
-  <div class="header-container">标题</div>
+  <div class="header-container">{{ title }}</div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    //声明title属性,允许使用者使用自定义标题
+    title: {
+      default: "1", //如果用户在父组件的<Header>中没有添加title属性,则默认值为空
+      type: String, //title为String类型
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
